@@ -1,0 +1,15 @@
+
+esquid:UselessImportCheck":Remove this unused import 'org.apache.spark.SparkContext'.(ÁÜ¸Ô8Þû™¨À-
+esquid:UselessImportCheck"5Remove this unused import 'org.apache.spark.sql.Row'.(ÿè©óøÿÿÿÿ8á…â¨À-
+]squid:UselessImportCheck"-Remove this unused import 'java.util.Arrays'.(î–˜Éüÿÿÿÿ8á…â¨À-
+[squid:UselessImportCheck"+Remove this unused import 'java.util.List'.(Õë±Äøÿÿÿÿ8á…â¨À-
+gsquid:UselessImportCheck"<Remove this unused import 'org.apache.spark.sql.RowFactory'.(Ã÷éâ8á…â¨À-
+ksquid:UselessImportCheck
+"ARemove this unused import 'org.apache.spark.ml.stat.Correlation'.(ñ¹Ò`8á…â¨À-
+Tsquid:S1854"6Remove this useless assignment to local variable "dv".(©ýÔ´8ñÕä¨À-
+gsquid:UselessImportCheck"7Remove this unused import 'org.apache.spark.SparkConf'.(¬Õâøþÿÿÿÿ8îÙ–¨À-
+qsquid:UselessImportCheck	"ARemove this unused import 'org.apache.spark.ml.linalg.VectorUDT'.(¨„’ùÿÿÿÿ8á…â¨À-
+nsquid:UselessImportCheck">Remove this unused import 'org.apache.spark.sql.SparkSession'.(ðà·›ýÿÿÿÿ8á…â¨À-
+isquid:UselessImportCheck"9Remove this unused import 'org.apache.spark.sql.Dataset'.(¶á¡ªÿÿÿÿÿ8á…â¨À-
+xsquid:S00120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(œçÁ-8ñ¯î§À-
+Esquid:S1481"'Remove this unused "dv" local variable.(©ýÔ´8Ì«å¨À-

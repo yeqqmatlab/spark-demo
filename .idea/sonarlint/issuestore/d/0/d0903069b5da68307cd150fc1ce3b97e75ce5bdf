@@ -1,0 +1,12 @@
+
+lsquid:CommentedOutCodeLine"<This block of commented-out lines of code should be removed.(Ë¿ŒÁýÿÿÿÿ8Ý‘º™¹-
+Lsquid:S1481"0Remove this unused "subtraction" local variable.(íš—Î8Ã†¾™¹-
+isquid:UselessImportCheck"ARemove this unused import 'java.util.function.IntBinaryOperator'.(žËÈD8Ðï”™¹-
+]squid:S1854"<Remove this useless assignment to local variable "division".(Õ­Èõúÿÿÿÿ8ÂÊÅ™¹-
+[squid:S1854"?Remove this useless assignment to local variable "subtraction".(íš—Î8„Ï½™¹-
+Nsquid:S1481"-Remove this unused "division" local variable.(Õ­Èõúÿÿÿÿ8ÂÊÅ™¹-
+Osquid:S1481"3Remove this unused "multiplication" local variable.(Ž°žª8áœÀ™¹-
+^squid:S1854"BRemove this useless assignment to local variable "multiplication".(Ž°žª8áœÀ™¹-
+osquid:S1602"SRemove useless curly braces around statement and then remove useless return keyword(Ž°žª8ý†Ã™¹-
+Y
+squid:S106"9Replace this use of System.out or System.err by a logger.(áéŒÎùÿÿÿÿ8»¦×™¹-

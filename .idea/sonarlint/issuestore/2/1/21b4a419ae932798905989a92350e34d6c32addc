@@ -1,0 +1,21 @@
+
+[
+squid:S1068"9Replace this use of System.out or System.err by a logger.(º“óšúÿÿÿÿ8¼Ñ“ªµ-
+[
+squid:S106R"9Replace this use of System.out or System.err by a logger.(®ýáëûÿÿÿÿ8Ë¸‹«µ-
+V
+squid:S106K"9Replace this use of System.out or System.err by a logger.(É’·»8Ë¸‹«µ-
+ksquid:S2259"HA "NullPointerException" could be thrown; "connection" is nullable here.(ÆªÕÍþÿÿÿÿ8ø®³©µ-
+V
+squid:S106P"9Replace this use of System.out or System.err by a logger.(›»¥Ê8Ë¸‹«µ-
+V
+squid:S106H"9Replace this use of System.out or System.err by a logger.(ºÒ”˜8º¸àªµ-
+[
+squid:S106?"9Replace this use of System.out or System.err by a logger.(—ßâÂùÿÿÿÿ8ËÀ¶ªµ-
+Xsquid:S3984"5Throw this exception or remove this useless statement(‰Þ­±þÿÿÿÿ8ø®³©µ-
+[
+squid:S106<"9Replace this use of System.out or System.err by a logger.(ó†Ñ÷ÿÿÿÿÿ8£‚¦ªµ-
+U
+squid:S106C"9Replace this use of System.out or System.err by a logger.(×È*8Çã·ªµ-
+[
+squid:S106L"9Replace this use of System.out or System.err by a logger.(Ô¾ðøÿÿÿÿ8éßŠ«µ-

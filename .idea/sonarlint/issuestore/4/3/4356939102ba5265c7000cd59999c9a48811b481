@@ -1,0 +1,7 @@
+
+esquid:S2095$"GUse try-with-resources or close this "Statement" in a "finally" clause.(˜ð×8††¶ã°-
+fsquid:S2095#"HUse try-with-resources or close this "Connection" in a "finally" clause.(ˆÏæÌ8††¶ã°-
+[
+squid:S106*"9Replace this use of System.out or System.err by a logger.(å“±öÿÿÿÿÿ8‡ù´ã°-
+esquid:S2095("GUse try-with-resources or close this "ResultSet" in a "finally" clause.(«Ä¶Ø8††¶ã°-
+>squid:S2068#" Remove this hard-coded password.(ˆÏæÌ8††¶ã°-
