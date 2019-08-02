@@ -34,6 +34,7 @@ public final class JavaSparkPi {
     SparkSession spark = SparkSession
       .builder()
       .appName("JavaSparkPi")
+      .master("local[2]") //on yarn 注释掉
       .getOrCreate();
 
     JavaSparkContext jsc = new JavaSparkContext(spark.sparkContext());

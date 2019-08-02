@@ -101,6 +101,7 @@ public final class JavaLogQuery {
     SparkSession spark = SparkSession
       .builder()
       .appName("JavaLogQuery")
+      .master("local[2]") //on yarn 注释掉
       .getOrCreate();
 
     JavaSparkContext jsc = new JavaSparkContext(spark.sparkContext());
