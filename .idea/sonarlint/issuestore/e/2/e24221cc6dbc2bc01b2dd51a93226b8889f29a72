@@ -1,12 +1,0 @@
-
-T
-squid:S106"9Replace this use of System.out or System.err by a logger.(èÍ­ò8Ðž“‡¶-
-Vsquid:S3984"5Throw this exception or remove this useless statement(‰Þ­±þÿÿÿÿ8ý«Ž‡¶-
-isquid:S2259"HA "NullPointerException" could be thrown; "connection" is nullable here.(ÆªÕÍþÿÿÿÿ8ý«Ž‡¶-
-Y
-squid:S106"9Replace this use of System.out or System.err by a logger.(¦¦áÜüÿÿÿÿ8Ðž“‡¶-
-gsquid:S1192"FDefine a constant instead of duplicating this literal "qual1" 4 times.(Šö¡µüÿÿÿÿ8Ðž“‡¶-
-T
-squid:S106"9Replace this use of System.out or System.err by a logger.(êçû«8Ðž“‡¶-
-S
-squid:S106"9Replace this use of System.out or System.err by a logger.(ª‰·T8Ðž“‡¶-

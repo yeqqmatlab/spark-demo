@@ -1,13 +1,0 @@
-
-gsquid:CallToDeprecatedMethod'"3Remove this use of "checkAndPut"; it is deprecated.(¼ÌÀıÿÿÿÿ8Î’×¥µ-
-hsquid:S1192"JDefine a constant instead of duplicating this literal "java_row3" 5 times.(úü÷8ŒÛª¦µ-
-[
-squid:S106"9Replace this use of System.out or System.err by a logger.(½å¾§ÿÿÿÿÿ8ƒë¾¥µ-
-V
-squid:S106""9Replace this use of System.out or System.err by a logger.(£ğ£‹8ì’Ì¥µ-
-gsquid:CallToDeprecatedMethod!"3Remove this use of "checkAndPut"; it is deprecated.(éÌ“¥úÿÿÿÿ8ì’Ì¥µ-
-Xsquid:S3984"5Throw this exception or remove this useless statement(‰Ş­±şÿÿÿÿ8·…¥µ-
-bsquid:CallToDeprecatedMethod"3Remove this use of "checkAndPut"; it is deprecated.(‘âå8·˜¹¥µ-
-ksquid:S2259"HA "NullPointerException" could be thrown; "connection" is nullable here.(ÆªÕÍşÿÿÿÿ8’Ğª¥µ-
-[
-squid:S106("9Replace this use of System.out or System.err by a logger.(üüÖüÿÿÿÿ8˜½Ô¥µ-
