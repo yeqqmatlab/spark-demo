@@ -40,6 +40,7 @@ public final class JavaSparkPi {
     JavaSparkContext jsc = new JavaSparkContext(spark.sparkContext());
 
     int slices = (args.length == 1) ? Integer.parseInt(args[0]) : 2;
+    System.out.println("slices--->"+slices);
     int n = 100000 * slices;
     List<Integer> l = new ArrayList<>(n);
     for (int i = 0; i < n; i++) {

@@ -93,7 +93,7 @@ object TxtToParquet {
     )
 
     val df: DataFrame = session.createDataFrame(res, schema)
-
+    //val frame: DataFrame = session.createDataFrame(res, schema)
     //if path exists and then delete it
     //val outputPath = "hdfs://ip243:8020/zsy/warehouse3"
 
