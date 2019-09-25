@@ -20,7 +20,6 @@ import java.io.File;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
-
 import org.apache.spark.api.java.function.MapFunction;
 import org.apache.spark.sql.Dataset;
 import org.apache.spark.sql.Encoders;
@@ -31,6 +30,7 @@ public class JavaSparkHiveExample {
 
   // $example on:spark_hive$
   public static class Record implements Serializable {
+
     private int key;
     private String value;
 
@@ -64,13 +64,12 @@ public class JavaSparkHiveExample {
       .getOrCreate();
 
     spark.sql("CREATE TABLE IF NOT EXISTS src (key INT, value STRING) USING hive");
-    spark.sql("LOAD DATA LOCAL INPATH 'examples/src/main/resources/kv1.txt' INTO TABLE src");
+    spark.sql("LOAD DATA LOCAL INPATH 'src/main/resources/kv1.txt' INTO TABLE src");
 
     // Queries are expressed in HiveQL
     spark.sql("SELECT * FROM src").show();
 
     spark.sql("SELECT COUNT(*) FROM src").show();
-
 
     Dataset<Row> sqlDF = spark.sql("SELECT key, value FROM src WHERE key < 10 ORDER BY key");
 
@@ -90,7 +89,6 @@ public class JavaSparkHiveExample {
     recordsDF.createOrReplaceTempView("records");
 
     spark.sql("SELECT * FROM records r JOIN src s ON r.key = s.key").show();
-
 
     spark.stop();
   }

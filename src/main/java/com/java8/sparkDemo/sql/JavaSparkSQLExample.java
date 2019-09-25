@@ -7,11 +7,8 @@ import org.apache.spark.sql.*;
 import org.apache.spark.sql.types.DataTypes;
 import org.apache.spark.sql.types.StructField;
 import org.apache.spark.sql.types.StructType;
-
 import javax.validation.constraints.Null;
-
 import static org.apache.spark.sql.functions.col;
-
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -218,9 +215,6 @@ public class JavaSparkSQLExample {
         Dataset<String> nameDF = teenagersDF.map((MapFunction<Row,String>)row -> "Name: " + row.getString(0), stringEncoder);
         nameDF.show();
 
-
-
-
     }
 
     private static void runProgrammaticSchemaExample(SparkSession spark) {
@@ -236,6 +230,12 @@ public class JavaSparkSQLExample {
             StructField field = DataTypes.createStructField(fieldName, DataTypes.StringType, true);
             fields.add(field);
         }
+        /*StructField field1 = DataTypes.createStructField(schemaString[0], DataTypes.StringType, true);
+        fields.add(field1);
+
+        StructField field2 = DataTypes.createStructField(schemaString[1], DataTypes.IntegerType, true);
+        fields.add(field2);*/
+
 
         StructType schema = DataTypes.createStructType(fields);
 
@@ -250,11 +250,14 @@ public class JavaSparkSQLExample {
 
         dataFrame.createOrReplaceTempView("person");
 
-        Dataset<Row> res = spark.sql("select name from person");
 
-        Dataset<String> nameDS = res.map((MapFunction<Row, String>) row -> "name:" + row.getString(0), Encoders.STRING());
 
-        nameDS.show();
+        Dataset<Row> res = spark.sql("select * from person");
+
+        res.show();
+        /*Dataset<String> nameDS = res.map((MapFunction<Row, String>) row -> "name:" + row.getString(0), Encoders.STRING());
+
+        nameDS.show();*/
 
 
     }

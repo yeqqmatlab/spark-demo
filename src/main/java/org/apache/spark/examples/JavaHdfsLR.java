@@ -28,6 +28,7 @@ import java.util.Random;
 import java.util.regex.Pattern;
 
 /**
+ * 逻辑回归基于分类
  * Logistic regression based classification.
  *
  * This is an example implementation for learning how to use Spark. For more conventional use,

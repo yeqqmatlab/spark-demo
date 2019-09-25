@@ -5,6 +5,7 @@ import org.apache.spark.sql.*;
 
 import java.io.Serializable;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 /**
@@ -68,7 +69,13 @@ public class JavaSQLDataSourceExample {
 
         //runBasicParquetExample(spark);
 
-        runParquetSchemaMergingExample(spark);
+        //runParquetSchemaMergingExample(spark);
+
+        //runJsonDatasetExample(spark);
+
+        runJdbcDatasetExample(spark);
+
+        spark.stop();
 
     }
 
@@ -98,7 +105,6 @@ public class JavaSQLDataSourceExample {
                 .partitionBy("favorite_color")
                 .format("parquet")
                 .save("namesPartByColor.parquet");
-
 
     }
 
@@ -148,8 +154,58 @@ public class JavaSQLDataSourceExample {
         Dataset<Row> mergedDF = spark.read().option("mergeSchema", true).parquet("data/test_table");
         mergedDF.printSchema();
 
+    }
 
+    private static void runJsonDatasetExample(SparkSession spark) {
 
+        /*Dataset<Row> peopleDF = spark.read().json("/Users/yqq/IdeaProjects/spark-demo/src/main/resources/people.json");
+        peopleDF.printSchema();
+
+        peopleDF.createOrReplaceTempView("people");
+
+        Dataset<Row> namesDF = spark.sql("SELECT * FROM people WHERE age BETWEEN 0 AND 60");
+
+        namesDF.show();*/
+
+        List<String> jsonData = Arrays.asList(
+                "{\"name\":\"Yin\",\"address\":{\"city\":\"Columbus\",\"state\":\"Ohio\"}}");
+        Dataset<String> anotherPeopleDataset = spark.createDataset(jsonData, Encoders.STRING());
+        Dataset<Row> anotherPeople = spark.read().json(anotherPeopleDataset);
+        anotherPeople.show();
+
+    }
+
+    private static void runJdbcDatasetExample(SparkSession spark) {
+
+        Dataset<Row> schoolDF = spark.read()
+                .format("jdbc")
+                .option("url", "jdbc:mysql://192.168.1.210:3307/spider_business")
+                .option("dbtable", "spider_business.school")
+                .option("user", "zsy")
+                .option("password", "lc12345")
+                .load();
+
+        //schoolDF.show();
+
+        schoolDF.createOrReplaceTempView("school");
+
+        Dataset<Row> schoolDS = spark.sql("select * from school");
+
+        Dataset<String> stringDataset = schoolDS.map((MapFunction<Row, String>) row -> row.getString(1) + "--" + row.getString(2), Encoders.STRING());
+
+        stringDataset.show(); //only show 20 row
+
+        long count = schoolDS.count();
+
+        System.out.println("count-->"+count);
+
+        schoolDF.write().mode(SaveMode.Append)
+                .format("jdbc")
+                .option("url", "jdbc:mysql://localhost:3306/bigdata?useUnicode=true&characterEncoding=utf8")
+                .option("dbtable", "bigdata.school")
+                .option("user", "root")
+                .option("password", "root")
+                .save();
 
     }
 
