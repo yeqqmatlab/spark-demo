@@ -53,19 +53,12 @@ public final class JavaDirectKafkaWordCount {
   private static final Pattern SPACE = Pattern.compile(" ");
 
   public static void main(String[] args) throws Exception {
-    if (args.length < 3) {
-      System.err.println("Usage: JavaDirectKafkaWordCount <brokers> <groupId> <topics>\n" +
-                         "  <brokers> is a list of one or more Kafka brokers\n" +
-                         "  <groupId> is a consumer group name to consume from topics\n" +
-                         "  <topics> is a list of one or more kafka topics to consume from\n\n");
-      System.exit(1);
-    }
 
     StreamingExamples.setStreamingLogLevels();
 
-    String brokers = args[0];
-    String groupId = args[1];
-    String topics = args[2];
+    String brokers = "localhost:9092";
+    String groupId = "test";
+    String topics = "test";
 
     // Create context with a 2 seconds batch interval
     SparkConf sparkConf = new SparkConf().setAppName("JavaDirectKafkaWordCount").setMaster("local[2]");

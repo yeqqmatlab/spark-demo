@@ -43,7 +43,7 @@ public class JavaCorrelationExample {
 
   public static void main(String[] args) {
     SparkSession spark = SparkSession
-      .builder()
+      .builder().master("local[2]")
       .appName("JavaCorrelationExample")
       .getOrCreate();
 
