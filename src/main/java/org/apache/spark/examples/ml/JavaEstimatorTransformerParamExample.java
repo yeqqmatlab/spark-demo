@@ -43,6 +43,7 @@ public class JavaEstimatorTransformerParamExample {
   public static void main(String[] args) {
     SparkSession spark = SparkSession
       .builder()
+      .master("local[2]")
       .appName("JavaEstimatorTransformerParamExample")
       .getOrCreate();
 

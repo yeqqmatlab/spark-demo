@@ -37,6 +37,7 @@ public class JavaSummarizerExample {
   public static void main(String[] args) {
     SparkSession spark = SparkSession
       .builder()
+      .master("local[2]")
       .appName("JavaSummarizerExample")
       .getOrCreate();
 

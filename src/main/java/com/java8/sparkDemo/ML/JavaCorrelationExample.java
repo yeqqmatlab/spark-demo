@@ -45,7 +45,7 @@ public class JavaCorrelationExample {
         /**
          * Pearson相关系数是用来衡量两个数据集合是否在一条线上面，用来衡量定距变量间的线性关系
          */
-        Row r1 = Correlation.corr(dataFrame, "features").head();
+        final Row r1 = Correlation.corr(dataFrame, "features").head();
         System.out.println("Pearson correlation matrix:\n" + r1.get(0).toString());
 
         /**
@@ -60,6 +60,9 @@ public class JavaCorrelationExample {
          * 与第二个相关性为0.055641488407465814,与第三个无法计算相关性，
          * 与第四个相关性0.055641488407465814。
          */
+
+
+
 
         sparkSession.stop();
     }

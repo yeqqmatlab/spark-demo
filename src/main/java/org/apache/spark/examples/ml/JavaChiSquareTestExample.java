@@ -33,6 +33,7 @@ import org.apache.spark.sql.types.*;
 // $example off$
 
 /**
+ * 卡方检验
  * An example for Chi-square hypothesis testing.
  * Run with
  * <pre>
@@ -44,6 +45,7 @@ public class JavaChiSquareTestExample {
   public static void main(String[] args) {
     SparkSession spark = SparkSession
       .builder()
+      .master("local[2]")
       .appName("JavaChiSquareTestExample")
       .getOrCreate();
 
