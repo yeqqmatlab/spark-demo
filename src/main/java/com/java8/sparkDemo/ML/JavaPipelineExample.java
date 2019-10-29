@@ -16,6 +16,8 @@ import java.util.List;
 
 /**
  * ML pipeline 处理流
+ * ML 算子流
+ * 模型 model = 算子 + 数据
  * Created by yqq on 2019/10/23.
  */
 public class JavaPipelineExample {
