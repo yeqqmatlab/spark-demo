@@ -24,7 +24,7 @@ public class ReadDataFromES2 {
                 .set("es.nodes.wan.only", "true");
 
         JavaSparkContext sc = new JavaSparkContext(conf);
-        JavaPairRDD<String, Map<String, Object>> esRDD = JavaEsSpark.esRDD(sc, "zsy-paper");
+        JavaPairRDD<String, Map<String, Object>> esRDD = JavaEsSpark.esRDD(sc, "zsy-etl");
         System.out.println(esRDD.count());
         System.out.println(esRDD.collect().toString());
         for(Tuple2 tuple:esRDD.collect()){
