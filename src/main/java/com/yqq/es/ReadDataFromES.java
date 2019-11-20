@@ -7,10 +7,7 @@ import org.apache.hadoop.fs.Path;
 import org.apache.spark.SparkConf;
 import org.apache.spark.api.java.JavaRDD;
 import org.apache.spark.api.java.JavaSparkContext;
-import org.apache.spark.sql.Dataset;
-import org.apache.spark.sql.Row;
-import org.apache.spark.sql.RowFactory;
-import org.apache.spark.sql.SparkSession;
+import org.apache.spark.sql.*;
 import org.apache.spark.sql.types.DataTypes;
 import org.apache.spark.sql.types.StructField;
 import org.apache.spark.sql.types.StructType;
@@ -69,6 +66,7 @@ public class ReadDataFromES {
             String serviceGroup = object.getString("serviceGroup");
             String requestIp = object.getString("requestIp");
             String userAgent = object.getString("userAgent");
+            String requestUri = object.getString("requestUri");
             String userId = object.getString("userId");
             String timestamp = object.getString("@timestamp");
             String service = object.getString("service");
@@ -76,19 +74,14 @@ public class ReadDataFromES {
             String errCode = object.getString("errCode");
             String schoolId = object.getString("schoolId");
             String client = object.getString("client");
-            return RowFactory.create(handleTime, continentName, cityName, countryName, countryCode2, continentCode, regionName, lon, lat, regionCode, requestMethod, serviceGroup, requestIp, userAgent, userId, timestamp, service, requestUrl, errCode, schoolId, client);
+            return RowFactory.create(handleTime, continentName, cityName, countryName, countryCode2, continentCode, regionName, lon, lat, regionCode, requestMethod, serviceGroup, requestIp, userAgent, requestUri, userId, timestamp, service, requestUrl, errCode, schoolId, client);
         });
         Dataset<Row> dataFrame = sparkSession.createDataFrame(rowJavaRDD, getSchema());
         dataFrame.show();
 
         //转成parquet格式，写入hdfs上
-        final FileSystem hdfs = FileSystem.get(new URI("hdfs://ip243:8020"), new Configuration());
-        String outputPath = "hdfs://ip243:8020//zsy/warehouse3/log_data";
-        if(hdfs.exists(new Path(outputPath))){
-            System.out.println("delete exits files");
-            hdfs.delete(new Path(outputPath),true);
-        }
-        dataFrame.write().parquet(outputPath);
+        String outputPath = "hdfs://ip243:8020/zsy/warehouse3/log_data";
+        dataFrame.write().mode(SaveMode.Overwrite).parquet(outputPath);
 
         sparkSession.stop();
     }
@@ -114,6 +107,7 @@ public class ReadDataFromES {
         fields.add(DataTypes.createStructField("service_group",DataTypes.StringType,true));
         fields.add(DataTypes.createStructField("request_ip",DataTypes.StringType,true));
         fields.add(DataTypes.createStructField("user_agent",DataTypes.StringType,true));
+        fields.add(DataTypes.createStructField("request_uri",DataTypes.StringType,true));
         fields.add(DataTypes.createStructField("user_id",DataTypes.StringType,true));
         fields.add(DataTypes.createStructField("timestamp",DataTypes.StringType,true));
         fields.add(DataTypes.createStructField("service",DataTypes.StringType,true));
