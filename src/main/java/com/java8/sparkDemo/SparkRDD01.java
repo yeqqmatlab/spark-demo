@@ -21,5 +21,9 @@ public class SparkRDD01 {
 
         rdd1.foreach(x->System.out.println(x));
 
+        final Integer counter = 1;
+
+        javaRDD.foreach( x -> x = counter + x);
+
     }
 }
