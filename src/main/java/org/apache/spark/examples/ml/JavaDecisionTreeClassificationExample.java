@@ -57,7 +57,7 @@ public class JavaDecisionTreeClassificationExample {
       .setMaxCategories(4) // features with > 4 distinct values are treated as continuous.
       .fit(data);
 
-    // Split the data into training and test sets (30% held out for testing).
+    // Split the data into training and test sets (30% held out for config.test).
     Dataset<Row>[] splits = data.randomSplit(new double[]{0.7, 0.3});
     Dataset<Row> trainingData = splits[0];
     Dataset<Row> testData = splits[1];

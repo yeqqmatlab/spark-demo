@@ -41,7 +41,7 @@ public class JavaRandomForestClassificationExample {
     // Load and parse the data file.
     String datapath = "data/mllib/sample_libsvm_data.txt";
     JavaRDD<LabeledPoint> data = MLUtils.loadLibSVMFile(jsc.sc(), datapath).toJavaRDD();
-    // Split the data into training and test sets (30% held out for testing)
+    // Split the data into training and test sets (30% held out for config.test)
     JavaRDD<LabeledPoint>[] splits = data.randomSplit(new double[]{0.7, 0.3});
     JavaRDD<LabeledPoint> trainingData = splits[0];
     JavaRDD<LabeledPoint> testData = splits[1];

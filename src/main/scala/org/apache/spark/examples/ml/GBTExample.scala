@@ -88,7 +88,7 @@ object GBTExample {
         .text(s"number of trees in ensemble, default: ${defaultParams.maxIter}")
         .action((x, c) => c.copy(maxIter = x))
       opt[Double]("fracTest")
-        .text(s"fraction of data to hold out for testing. If given option testInput, " +
+        .text(s"fraction of data to hold out for config.test. If given option testInput, " +
         s"this option is ignored. default: ${defaultParams.fracTest}")
         .action((x, c) => c.copy(fracTest = x))
       opt[Boolean]("cacheNodeIds")

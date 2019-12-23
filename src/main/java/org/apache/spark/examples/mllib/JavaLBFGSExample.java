@@ -44,7 +44,7 @@ public class JavaLBFGSExample {
     JavaRDD<LabeledPoint> data = MLUtils.loadLibSVMFile(sc, path).toJavaRDD();
     int numFeatures = data.take(1).get(0).features().size();
 
-    // Split initial RDD into two... [60% training data, 40% testing data].
+    // Split initial RDD into two... [60% training data, 40% config.test data].
     JavaRDD<LabeledPoint> trainingInit = data.sample(false, 0.6, 11L);
     JavaRDD<LabeledPoint> test = data.subtract(trainingInit);
 

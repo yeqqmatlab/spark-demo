@@ -42,7 +42,7 @@ public class JavaSVMWithSGDExample {
     String path = "data/mllib/sample_libsvm_data.txt";
     JavaRDD<LabeledPoint> data = MLUtils.loadLibSVMFile(sc, path).toJavaRDD();
 
-    // Split initial RDD into two... [60% training data, 40% testing data].
+    // Split initial RDD into two... [60% training data, 40% config.test data].
     JavaRDD<LabeledPoint> training = data.sample(false, 0.6, 11L);
     training.cache();
     JavaRDD<LabeledPoint> test = data.subtract(training);

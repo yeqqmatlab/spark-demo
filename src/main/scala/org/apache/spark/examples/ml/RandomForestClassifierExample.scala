@@ -51,7 +51,7 @@ object RandomForestClassifierExample {
       .setMaxCategories(4)
       .fit(data)
 
-    // Split the data into training and test sets (30% held out for testing).
+    // Split the data into training and test sets (30% held out for config.test).
     val Array(trainingData, testData) = data.randomSplit(Array(0.7, 0.3))
 
     // Train a RandomForest model.

@@ -34,7 +34,7 @@ object DecisionTreeRegressionExample {
     // $example on$
     // Load and parse the data file.
     val data = MLUtils.loadLibSVMFile(sc, "data/mllib/sample_libsvm_data.txt")
-    // Split the data into training and test sets (30% held out for testing)
+    // Split the data into training and test sets (30% held out for config.test)
     val splits = data.randomSplit(Array(0.7, 0.3))
     val (trainingData, testData) = (splits(0), splits(1))
 

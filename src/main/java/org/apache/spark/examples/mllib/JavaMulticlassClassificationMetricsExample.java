@@ -39,7 +39,7 @@ public class JavaMulticlassClassificationMetricsExample {
     String path = "data/mllib/sample_multiclass_classification_data.txt";
     JavaRDD<LabeledPoint> data = MLUtils.loadLibSVMFile(sc, path).toJavaRDD();
 
-    // Split initial RDD into two... [60% training data, 40% testing data].
+    // Split initial RDD into two... [60% training data, 40% config.test data].
     JavaRDD<LabeledPoint>[] splits = data.randomSplit(new double[]{0.6, 0.4}, 11L);
     JavaRDD<LabeledPoint> training = splits[0].cache();
     JavaRDD<LabeledPoint> test = splits[1];

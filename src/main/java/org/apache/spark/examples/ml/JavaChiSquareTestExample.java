@@ -34,7 +34,7 @@ import org.apache.spark.sql.types.*;
 
 /**
  * 卡方检验
- * An example for Chi-square hypothesis testing.
+ * An example for Chi-square hypothesis config.test.
  * Run with
  * <pre>
  * bin/run-example ml.JavaChiSquareTestExample

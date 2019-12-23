@@ -25,7 +25,7 @@ import org.apache.spark.ml.stat.ChiSquareTest
 import org.apache.spark.sql.SparkSession
 
 /**
- * An example for Chi-square hypothesis testing.
+ * An example for Chi-square hypothesis config.test.
  * Run with
  * {{{
  * bin/run-example ml.ChiSquareTestExample

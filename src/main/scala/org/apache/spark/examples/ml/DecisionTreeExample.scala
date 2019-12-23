@@ -87,7 +87,7 @@ object DecisionTreeExample {
         .text(s"min info gain required to create a split, default: ${defaultParams.minInfoGain}")
         .action((x, c) => c.copy(minInfoGain = x))
       opt[Double]("fracTest")
-        .text(s"fraction of data to hold out for testing. If given option testInput, " +
+        .text(s"fraction of data to hold out for config.test. If given option testInput, " +
           s"this option is ignored. default: ${defaultParams.fracTest}")
         .action((x, c) => c.copy(fracTest = x))
       opt[Boolean]("cacheNodeIds")
@@ -156,7 +156,7 @@ object DecisionTreeExample {
    * @param dataFormat  "libsvm" or "dense"
    * @param testInput  Path to test dataset.
    * @param algo  Classification or Regression
-   * @param fracTest  Fraction of input data to hold out for testing. Ignored if testInput given.
+   * @param fracTest  Fraction of input data to hold out for config.test. Ignored if testInput given.
    * @return  (training dataset, test dataset)
    */
   private[ml] def loadDatasets(

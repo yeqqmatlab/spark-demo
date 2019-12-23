@@ -31,7 +31,7 @@ import org.apache.spark.util.Utils;
 
 
 /**
- * Perform streaming testing using Welch's 2-sample t-test on a stream of data, where the data
+ * Perform streaming config.test using Welch's 2-sample t-test on a stream of data, where the data
  * stream arrives as text files in a directory. Stops when the two groups are statistically
  * significant (p-value < 0.05) or after a user-specified timeout in number of batches is exceeded.
  *

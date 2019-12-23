@@ -49,7 +49,7 @@ public class JavaDecisionTreeRegressionExample {
       .setMaxCategories(4)
       .fit(data);
 
-    // Split the data into training and test sets (30% held out for testing).
+    // Split the data into training and test sets (30% held out for config.test).
     Dataset<Row>[] splits = data.randomSplit(new double[]{0.7, 0.3});
     Dataset<Row> trainingData = splits[0];
     Dataset<Row> testData = splits[1];
