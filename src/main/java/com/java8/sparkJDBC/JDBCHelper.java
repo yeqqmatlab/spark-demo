@@ -23,6 +23,7 @@ public class JDBCHelper {
                     .write()
                     .mode(SaveMode.Overwrite)
                     .option("truncate","true") //不删除表结构
+                    .option("batchsize","1000") //批处理 默认1000
                     .jdbc(url,tableName,connectionProperties);
         } catch (Exception e) {
             e.printStackTrace();
