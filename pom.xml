@@ -152,6 +152,27 @@
 
     </dependencies>
 
+    <profiles>
+        <profile>
+            <id>dev</id>
+            <properties>
+                    <env>dev</env>
+                    <spaek-scope>compile</spaek-scope>
+            </properties>
+            <!-- 默认选中-->
+            <activation>
+                <activeByDefault>true</activeByDefault>
+            </activation>
+        </profile>
+        <profile>
+            <id>test</id>
+            <properties>
+                <env>test</env>
+                <spaek-scope>provided</spaek-scope>
+            </properties>
+        </profile>
+    </profiles>
+
 
     <build>
         <pluginManagement>

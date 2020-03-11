@@ -13,20 +13,23 @@ public class JDBCHelper {
 
     public static void writeDataToMysql(Dataset<Row> examResDF, String tableName) {
 
-        String url = "jdbc:mysql://192.168.1.210:3307/zsy_data?characterEncoding=UTF-8";
+        String url = "jdbc:mysql://localhost:3306/stock_data?characterEncoding=UTF-8&rewriteBatchedStatements=true";
         Properties connectionProperties = new Properties();
-        connectionProperties.setProperty("user", "zsy");// 设置用户名
-        connectionProperties.setProperty("password", "lc12345");// 设置密码
+        connectionProperties.setProperty("user", "root");// 设置用户名
+        connectionProperties.setProperty("password", "root");// 设置密码
 
         try {
             examResDF
                     .write()
                     .mode(SaveMode.Overwrite)
                     .option("truncate","true") //不删除表结构
-                    .option("batchsize","1000") //批处理 默认1000
+                    .option("batchsize","10000") //批处理 默认1000
                     .jdbc(url,tableName,connectionProperties);
         } catch (Exception e) {
             e.printStackTrace();
         }
     }
+
+
+
 }
